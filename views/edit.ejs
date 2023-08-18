@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Update the comment</h1>
+    <form action="/comments/<%=comment.id%>?_method=PATCH" method="post">
+        <section>
+            <label for="username">username</label>
+            <input type="text" name="username" id="username" value="<%= comment.username %>">
+        </section>
+        <section>
+            <label for="comment">comment text</label><br>
+            <textarea name="comment" id="comment" cols="30" rows="10"><%= comment.comment %></textarea>
+        </section>
+        <button>Update</button>
+    </form>
+
+    <a href="/comments/<%=comment.id%>">Back to show</a> <br>
+    <a href="/comments">Back to comments</a>
+</body>
+</html>
